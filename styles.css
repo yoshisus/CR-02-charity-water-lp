@@ -17,3 +17,411 @@ Fonts:
 - Avenir
 
 */
+
+/* Basic page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fdf6ed;
+    color: #222;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    align-items: stretch; /* Make children full height */
+    justify-content: space-between;
+    background: #fffbea;
+    padding: 0 0px; /* Remove top/bottom padding for flush look */
+    border-bottom: none; /* Remove the white line at the top */
+    height: 90px; /* Set a fixed height for the header */
+}
+.logo {
+    height: 75px;
+    width: auto;
+    display: block;
+    /* Add left margin to move the logo to the right */
+    margin-left: 40px; /* You can adjust this value as needed */
+    margin-top: 4px;   /* Move the logo down by 1px */
+}
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+nav a:nth-child(1) {
+    background: #ffe04a;
+}
+
+/* Add a black background behind the header buttons */
+.header-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px;
+    /* Make the background behind the buttons a bit smaller horizontally */
+    padding-right: 140px;  /* Reduced by 1px */
+    background: #111; /* Black background */
+    height: 100%;          /* Full height of header */
+    align-items: center;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 80px;   /* Reduced by 1px */
+    
+}
+.header-buttons {
+    margin-left: -13px; /* Moves black background 2px to the left */
+}
+
+.sign-in {
+    background: #fff;
+    color: #222;
+    border: none; /* Removed border */
+    padding: 20px 50px;
+    font-weight: bold;
+    font-size: 1.15em;
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.donate {
+    background: #fff;
+    color: #222;
+    border: none; /* Removed border */
+    padding: 20px 50px;
+    font-weight: bold;
+    font-size: 1.15em;
+    cursor: pointer;
+    border-radius: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Make both buttons the same size */
+.header-buttons .sign-in,
+.header-buttons .donate {
+  width: 200px; /* Increased width to make buttons longer */
+  height: 38px;
+  display: inline-flex;
+  flex-direction: column; /* Stack text vertically */
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  font-size: .85em;
+  margin-right: 10px;
+  /* Prevent text from wrapping or breaking */
+  white-space: nowrap;
+  word-break: normal;
+  /* Reduce space between lines */
+  line-height: .5; /* Makes the gap between lines even smaller */
+}
+
+/* Make sure the donate button text fits nicely inside the button */
+.header-buttons .donate {
+  padding: 0;
+  line-height: .75;
+  white-space: nowrap;
+  word-break: normal;
+  font-size: 13px;
+}
+/* Move only the word "donate" up by 1px */
+.header-buttons .donate .donate-text {
+  display: inline-block;
+  position: relative;
+  top: -3px; /* Move only the word "donate" up by 1px */
+}
+
+/* Style for the text inside the donate button */
+/* This keeps "Make a Change." on one line and "DONATE." underneath, like the image */
+.header-buttons .donate .donate-main {
+  display: block;           /* Each part on its own line */
+  font-weight: bold;
+  font-size: 1.15em;
+  line-height: 1.1;
+  white-space: nowrap;      /* Prevents wrapping */
+}
+
+.header-buttons .donate .donate-text {
+  display: block;           /* "DONATE." on its own line */
+  font-size: 1.15em;
+  margin-top: 2px;          /* Small space between lines */
+  font-weight: normal;
+  color: #222;
+}
+
+.header-buttons .donate .blue-text {
+  color: #2E9DF7;           /* Blue color for "CHANGE." */
+}
+
+
+/* Navigation links spaced evenly next to the logo */
+.main-nav {
+    display: flex;
+    gap: 0; /* No space between links */
+    margin-left: 32px; /* Space from logo */
+    align-items: center;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0 8px;
+    height: 90px;
+    display: flex;
+    gap: 0; /* No space between links */
+    margin-left: 0;
+    align-items: center;
+
+    transition: background 0.2s;
+    min-width: 120px; /* Make all nav buttons the same width */
+    justify-content: center; /* Center text horizontally */
+     padding-left: 62px;  /* Increased by 1px */
+    padding-right: 62px; /* Increased by 1px */
+}
+/* Remove the white gap between nav links on hover */
+.main-nav a + a {
+    /* Move each link 1px to the left to overlap the previous link's border */
+    margin-left: -15px;
+}
+/* Make the yellow background behind "TAKE ACTION" full height */
+.main-nav a.nav-yellow {
+    background: #ffe04a;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    min-width: 120px; /* Match width with other buttons */
+    justify-content: center;
+}
+/* Make hover background the same size as the yellow background */
+.main-nav a:hover {
+    background: #f6e9b2;
+    min-width: 120px; /* Keep width on hover */
+    justify-content: center;
+    /* Make the "Why Water" button the same size as the others on hover */
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+/* Hero section styles */
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto 0 auto;
+    flex: 2 1 500px;      /* Make hero section take up more space */
+    max-width: 620px;     /* Increase max-width for a larger hero image */
+    min-width: 400px;     /* Optionally increase min-width */
+    margin: 0;
+    /* Move the hero image 20px to the left */
+    margin-left: -300px;
+}
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.hero-text {
+    /* Position the text at the bottom left of the hero image */
+    position: absolute;
+    bottom: 180px;   /* Moved up by 1px (was 30px) */
+    left: 40px;     /* Distance from the left of the image */
+    color: #fff;    /* White text for contrast */
+    padding: 0;     /* Remove extra padding for a flush look */
+    max-width: 60%; /* Keep text from stretching too far */
+}
+
+/* Make the hero text large and bold */
+.hero-text h1 {
+    font-size: 3.2em;   /* Bigger text */
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.05;  /* Tight line spacing */
+    letter-spacing: -1px; /* Slightly tighter letters */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.45); /* Add shadow for readability */
+}
+
+/* Info bar styles */
+.info-bar {
+    background: #fffbea;
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    padding: 18px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.brand {
+    color: #1ca9c9;
+    font-weight: bold;
+}
+.highlight {
+    color: #ffe04a;
+    font-weight: bold;
+}
+
+/* Causes section */
+.causes {
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    flex: 1 1 350px;
+    max-width: 350px;
+    min-width: 250px;
+    margin: 0;
+    margin-left: 50px; /* Move the causes section to the right by 2px */
+}
+.causes h2 {
+    margin-bottom: 18px;
+    font-size: 1.3em;
+}
+.causes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Causes grid in two rows, with title in the center */
+.causes-row {
+    display: flex;
+    justify-content: flex-end; /* Move cards to the right */
+    align-items: center;
+    gap: 24px;                /* Equal space between cards */
+    margin-bottom: 10px;
+}
+
+.cause-card {
+    /* Make the cause card fit the "fund untiltered" area */
+    width: 380px;             /* Slightly wider card for bigger images */
+    margin: 0;                /* Remove auto margin so cards align right */
+    background: #fff;
+    border: 1px solid #eee;
+    padding-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    text-align: left;
+}
+.cause-card img {
+    /* Make the cause images wider but not overlapping */
+    width: 100%;              /* Slightly wider image */
+    height: 100%;
+    object-fit: cover;
+    display: block;       /* Center the image in the card */
+}
+.causes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* This creates two equal columns */
+    gap: 20px; /* This adds a nice space between the cards */
+}
+
+.causes-title-center {
+    text-align: center;
+    margin: 18px 0 18px 0;
+}
+.causes-title-center h2 {
+    /* Show the title in a single line for beginners */
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+    font-size: 1.2em;
+    margin: 0;
+    color: #222;
+    background: #fffbea;
+    padding: 12px 0;
+    border-radius: 4px;
+    /* Move the causes title to the left by 1px */
+    position: relative;
+    right: -300px;
+}
+
+.cause-btn {
+    display: block;
+    margin: 12px auto 0 auto;
+    padding: 8px 0;
+    width: 90%;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+}
+.cause-btn.yellow {
+    background: #ffe04a;
+    color: #222;
+}
+
+/* Footer styles */
+footer {
+    background: #fffbea;
+    padding: 18px 10px;
+    text-align: center;
+    font-size: 0.95em;
+}
+footer a {
+    color: #1ca9c9;
+    text-decoration: underline;
+}
+
+/* Layout for hero and causes side by side */
+.main-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+}
+
+/* Make hero and causes take up similar width */
+.hero {
+    flex: 2 1 500px;      /* Make hero section take up more space */
+    max-width: 645px;     /* Increase max-width for a larger hero image */
+    min-width: 400px;     /* Optionally increase min-width */
+    margin: 0;
+    /* Move the hero image 1px more to the right so it fits in view */
+    margin-left: -455px; /* Shift right by 1px */
+    margin-top: -30px;
+}
+
+.causes {
+    flex: 1 1 350px;
+    max-width: 350px;
+    min-width: 250px;
+    margin: 0;
+    
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+    .main-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero, .causes {
+        max-width: 100%;
+    }
+    .causes-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .causes-title-center h2 {
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+/* Style for the small water drop icon next to "DONATE." */
+.waterdrop-icon {
+  width: 16px;      /* Makes the image small */
+  height: 16px;
+  vertical-align: middle; /* Aligns with text */
+  position: relative;     /* Allows you to move it with top/left/right/bottom */
+  left: 0px;   /* Move right/left: positive is right, negative is left */
+  top: 0px;    /* Move up/down: positive is down, negative is up */
+  /* Make the water drop the same blue as "CHANGE." */
+  filter: brightness(0) saturate(100%) invert(54%) sepia(92%) saturate(749%) hue-rotate(176deg) brightness(97%) contrast(93%);
+}
