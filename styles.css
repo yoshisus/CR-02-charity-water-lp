@@ -5,7 +5,7 @@ Primary Colors:
 Secondary Colors:
 - Light Blue: #8BD1CB
 - Green:      #4FCB53
-- Orange:     #FF902A
+- Orange:     #FF9A2A
 - Red:        #F5402C
 - Dark Green: #159A48
 - Pink:       #F16061
@@ -75,17 +75,16 @@ body {
     color: #FFF;
 }
 
-/* Content Layout Wrapper */
+/* --- THIS IS THE CORRECTED SECTION --- */
 .content-wrapper {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    padding: 40px;
     gap: 40px;
-    align-items: start;
+    /* The padding property has been REMOVED from this rule */
 }
 
 .hero {
-    background-image: url('img/hero\ image.jpg');
+    background-image: url('img/hero image.jpg'); /* Note: for web, it's best to avoid spaces in filenames e.g. 'hero-image.jpg' */
     background-size: cover;
     background-position: center;
     min-height: 75vh;
@@ -111,10 +110,8 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 40px; /* Added padding */
+    padding: 40px;
 }
-
-
 
 .hero-footer p {
     max-width: 400px;
@@ -133,23 +130,27 @@ body {
     border-radius: 50%;
 }
 
-/* --- UPDATED CAUSES SECTION (Right Column) --- */
+.causes {
+    /* Adds padding to the right and bottom of this column */
+    padding: 0 20px 20px 0;
+}
+
 .causes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px; /* This gap now creates the space for the title */
-    margin: 0 auto;
+    row-gap: 15px;       /* Controls the smaller vertical space */
+column-gap: 25px;    /* Keeps the horizontal space the same */
+    margin: 20px auto 0; /* Pushes the grid down by 40px */
 }
 
 .section-title {
-    /* This is the key change */
-    grid-column: 1 / -1; /* Makes the title span across both columns */
-    text-align: center;  /* Centers the text */
-    align-self: center;  /* Vertically centers it in the gap */
+    grid-column: 1 / -1;
+    text-align: center;
+    align-self: center;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    margin: 0; /* Resets any previous margin */
+    margin: 0;
 }
 
 .cause-card {
@@ -184,86 +185,22 @@ body {
 .cause-label .arrow {
     margin-left: 10px;
 }
-.causes {
-    /* Adds padding to the right and bottom of this column */
-    padding: 0 40px 40px 0;
-}
 
 .causes-footer {
     max-width: 100%;
-    margin: 30px auto 0;
+    margin: 8px auto 0;
     font-size: 0.9rem;
-    line-height: 1.5;
+    line-height: 1.0;
     text-align: center;
 }
 
-.causes-footer p {
-    margin-bottom: 15px;
-}
+
 
 .causes-footer a {
     color: #000;
     font-weight: 700;
 }
 
-/* --- RESPONSIVE DESIGN --- */
-@media (max-width: 1100px) {
-    .content-wrapper {
-        grid-template-columns: 1fr; /* Stacks the two main columns */
-    }
-    .hero {
-        min-height: 60vh;
-    }
-}
-
-@media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        padding: 15px;
-    }
-    .nav-left {
-        width: 100%;
-        justify-content: space-between;
-        margin-bottom: 15px;
-    }
-    .nav-right {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .nav-button {
-        flex-grow: 1;
-        text-align: center;
-    }
- .content-wrapper {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
-}
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-}
-/* This new rule targets the specific labels */
-.cause-label.label-white {
-    color: #FFFFFF; /* Makes the text white */
-}
-/* New rule for black background labels */
-.cause-label.label-black-bg {
-    background-color: #000000;
-    color: #FFFFFF;
-}
-/* Styles the #CharityWater hashtag in the footer */
-.hashtag {
-    font-weight: 700; /* or bold */
-    color: #2E9DF7; /* The brand's primary blue */
-}
-/* Styles the bar below the hero image */
 .hero-sub-section {
     display: flex;
     justify-content: space-between;
@@ -280,6 +217,29 @@ body {
     color: #000;
     text-decoration: none;
 }
+
+/* This new rule targets the specific labels */
+.cause-label.label-white {
+    color: #FFFFFF; /* Makes the text white */
+}
+
+/* New rule for black background labels */
+.cause-label.label-black-bg {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Styles the #CharityWater hashtag in the footer */
+.hashtag {
+    font-weight: 700; /* or bold */
+    color: #2E9DF7; /* The brand's primary blue */
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1100px) {
+    .content-wrapper {
+        /* On smaller
 
 /* Style for the small water drop icon next to "DONATE." */
 .waterdrop-icon {
