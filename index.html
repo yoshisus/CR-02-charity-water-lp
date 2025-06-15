@@ -2,103 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charity Water Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Avenir+Next:wght@400;500;700&family=Proxima+Nova:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with logo and navigation -->
-    <header>
-        <div class="header-left">
-            <!-- Logo (placeholder) and brand name -->
-            <img src="img/charitywater_logo_vertical_AllBlack.png" alt="Charity Water Logo" class="logo">
-            
+
+    <header class="main-header">
+        <div class="nav-left">
+            <img src="img/charitywater_logo_vertical_AllBlack.png" alt="charity: water logo" class="logo">
+            <nav class="main-nav">
+                <a href="#" class="nav-link action-link">TAKE ACTION</a>
+                <a href="#" class="nav-link">ABOUT US</a>
+                <a href="#" class="nav-link">WHY WATER?</a>
+            </nav>
         </div>
-        <!-- Navigation links -->
-        <nav class="main-nav">
-            <!-- Navigation links are now in a flex container for equal spacing -->
-            <a class="nav-yellow" href="#">TAKE ACTION</a>
-            <a href="#">ABOUT US</a>
-            <a href="#">WHY WATER?</a>
-        </nav>
-        <!-- Sign in and donate buttons -->
-        <div class="header-buttons">
-            <button class="sign-in">SIGN IN</button>
-            <!-- "Make a Change." and "Donate." stacked like the image -->
-            <button class="donate">
-                <span class="donate-main">MAKE A <span class="blue-text">CHANGE.</span></span>
-                <span class="donate-text">
-                    DONATE.
-                    <!-- Small water drop image next to "DONATE." -->
-                    <img src="img/sky-blue-water-drop-md.png" alt="Water Drop" class="waterdrop-icon">
-                </span>
-            </button>
+        <div class="nav-right">
+            <a href="#" class="nav-button sign-in">SIGN IN</a>
+            <a href="#" class="nav-button donate">MAKE A CHANGE. <strong>DONATE.</strong></a>
         </div>
     </header>
 
-    <!-- Main content area -->
-    <main>
-        <!-- Hero and Causes side by side -->
-        <div class="main-flex">
-            <!-- Hero section with background image and message -->
+   <main>
+    <div class="content-wrapper">
+
+        <div class="left-column">
             <section class="hero">
-                <img src="img/hero image.jpg" alt="Child with water" class="hero-img">
-                <div class="hero-text">
+                <div class="hero-content">
                     <h1>YOU DEMAND CHANGE? BE THAT CHANGE.</h1>
                 </div>
-                <!-- Info bar under hero -->
-                <section class="info-bar">
-                    <p>
-                        Fund Unfiltered Impact with <span class="brand">charity: water.</span>
-                        <br>
-                        Join students <span class="highlight">worldwide</span> in dismantling water inequality and empowering communities. 100% of your donations help fund sustainable water solutions.
-                    </p>
-                </section>
+                <div class="hero-footer">
+                    <p>Join students <span class="worldwide">worldwide</span> in dismantling water inequality and empowering communities. 100% of your donations help fund sustainable water solutions.</p>
+                    <a href="#" class="arrow-link">→</a>
+                </div>
             </section>
 
-            <!-- Causes grid -->
-            <section class="causes">
-                <div class="causes-row">
-                    <!-- Education cause (left) -->
-                    <div class="cause-card">
-                        <img src="img/education cause.jpg" alt="Education">
-                        <a href="#" class="cause-btn">Education &rarr;</a>
-                    </div>
-                    <!-- Water cause (right) -->
-                    <div class="cause-card">
-                        <img src="img/water cause.jpg" alt="Water">
-                        <a href="#" class="cause-btn yellow">Water &rarr;</a>
-                    </div>
-                </div>
-                <!-- Title in the center of the grid -->
-                <div class="causes-title-center">
-                    <h2>LEARN MORE ABOUT OUR CAUSES.</h2>
-                </div>
-                <div class="causes-row">
-                    <!-- Health cause (left) -->
-                    <div class="cause-card">
-                        <img src="img/health cause.jpg" alt="Health">
-                        <a href="#" class="cause-btn yellow">Health &rarr;</a>
-                    </div>
-                    <!-- Social cause (right) -->
-                    <div class="cause-card">
-                        <img src="img/social cause.jpg" alt="Social">
-                        <a href="#" class="cause-btn">#Social &rarr;</a>
-                    </div>
-                </div>
-            </section>
+            <div class="hero-sub-section">
+                <p>Fund Unfiltered Impact with <strong>charity: water.</strong></p>
+                <a href="#" class="sub-section-arrow">→</a>
+            </div>
         </div>
-    </main>
 
-    <!-- Footer with social links -->
-    <footer>
-        <p>
-            Do you have ways you can help your school or community tackle the water crisis? Share them with us using #CharityWater.<br>
-            Follow us on 
-            <a href="#">Twitter</a>, 
-            <a href="#">Tiktok</a>, &amp; 
-            <a href="#">YouTube</a>.
-        </p>
-    </footer>
-</body>
-</html>
+        <section class="causes">
+            <div class="causes-grid">
+                <a href="#" class="cause-card">
+                    <img src="images/education.jpg" alt="Children in a classroom setting">
+                    <div class="cause-label label-black-bg">Education <span class="arrow">→</span></div>
+                </a>
+                <a href="#" class="cause-card">
+                    <img src="images/water.jpg" alt="Clean water pouring from a tap">
+                    <div class="cause-label label-white">Water <span class="arrow">→</span></div>
+                </a>
+                <h2 class="section-title">LEARN MORE ABOUT OUR CAUSES.</h2>
+                <a href="#" class="cause-card">
+                    <img src="images/health.jpg" alt="A young girl smiling and drinking clean water">
+                    <div class="cause-label">Health <span class="arrow">→</span></div>
+                </a>
+                <a href="#" class="cause-card">
+                    <img src="images/social.jpg" alt="Community members working together on a water project">
+                    <div class="cause-label label-black-bg">#Social <span class="arrow">→</span></div>
+                </a>
+            </div>
+            <div class="causes-footer">
+                <p>Do you have ways you can help your school or community tackle the water crisis? Share them with us using <span class="hashtag">#CharityWater</span>.</p>
+                <p>Follow us on <a href="#">Twitter</a>, <a href="#">TikTok</a>, & <a href="#">YouTube</a>.</p>
+            </div>
+        </section>
+        
+    </div>
+</main>
